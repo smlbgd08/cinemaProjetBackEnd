@@ -29,6 +29,8 @@ public class Cinema implements Serializable {
 	private List<Salle> salles ;
 	@ManyToOne
 	private Ville ville ;
+	
+	private String git ;
 
 
 	
