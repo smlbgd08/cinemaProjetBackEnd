@@ -118,27 +118,27 @@ public class CinemaServiceImpl implements ICinemaService {
 		});
 	}
 
-	@Override
-	public void initCategories() {
-		Stream.of("Histoire","Actions","Fictions","Drama").forEach(catg -> {
-			Categorie categorie = new Categorie();
-			categorie.setName(catg);
-			categorieRepository.save(categorie);
-		});
-	}
+//	@Override
+//	public void initCategories() {
+//		Stream.of("Histoire","Actions","Fictions","Drama").forEach(catg -> {
+//			Categorie categorie = new Categorie();
+//			categorie.setName(catg);
+//			categorieRepository.save(categorie);
+//		});
+//	}
 
-	@Override
-	public void initFilms() {
-		double[] durees = new double[] {1,1.5,2,2.5,3};
-		java.util.List<Categorie> ctg = categorieRepository.findAll();
-		Stream.of("Game of thrones","30 milione","El Farouje","Spider man" , "IRON man").forEach(titre -> {
-			Film film = new Film();
-			film.setTitre(titre);
-			film.setDuree(durees[new Random().nextInt(durees.length)] );
-			film.setCategorie(ctg.get(new Random().nextInt(ctg.size())));
-			filmRepository.save(film);
-		});
-	}
+//	@Override
+//	public void initFilms() {
+//		double[] durees = new double[] {1,1.5,2,2.5,3};
+//		java.util.List<Categorie> ctg = categorieRepository.findAll();
+//		Stream.of("Game of thrones","30 milione","El Farouje","Spider man" , "IRON man").forEach(titre -> {
+//			Film film = new Film();
+//			film.setTitre(titre);
+//			film.setDuree(durees[new Random().nextInt(durees.length)] );
+//			film.setCategorie(ctg.get(new Random().nextInt(ctg.size())));
+//			filmRepository.save(film);
+//		});
+//	}
 
 	@Override
 	public void initProjections() {
@@ -151,11 +151,11 @@ public class CinemaServiceImpl implements ICinemaService {
 					Film film  = films.get(index);
 						seanceRepository.findAll().forEach(seance->{
 							Projection projection = new Projection();
-							projection.setFilm(film);
-							projection.setSalle(salle);
-							projection.setSeance(seance);
-							projection.setPrix(prix[new Random().nextInt(prix.length)]);
-							projectionRepository.save(projection);
+//							projection.setFilm(film);
+//							projection.setSalle(salle);
+//							projection.setSeance(seance);
+//							projection.setPrix(prix[new Random().nextInt(prix.length)]);
+//							projectionRepository.save(projection);
 						});
 					
 				});
@@ -166,14 +166,14 @@ public class CinemaServiceImpl implements ICinemaService {
 	@Override
 	public void initTickets() {
 		projectionRepository.findAll().forEach(projection->{
-			projection.getSalle().getPlaces().forEach(place->{
-				Ticket ticket = new Ticket();
-				ticket.setPlace(place);
-				ticket.setReserve(false);
-				ticket.setPrix(projection.getPrix());
-				ticket.setProjection(projection);
-				ticketRepository.save(ticket);
-			});
+//			projection.getSalle().getPlaces().forEach(place->{
+//				Ticket ticket = new Ticket();
+//				ticket.setPlace(place);
+//				ticket.setReserve(false);
+//				ticket.setPrix(projection.getPrix());
+//				ticket.setProjection(projection);
+//				ticketRepository.save(ticket);
+//			});
 		});
 	}
 

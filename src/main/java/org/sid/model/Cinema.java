@@ -32,6 +32,80 @@ public class Cinema implements Serializable {
 	
 	private String git ;
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+
+	public double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
+	public double getAltitude() {
+		return altitude;
+	}
+
+	public void setAltitude(double altitude) {
+		this.altitude = altitude;
+	}
+
+	public int getNmbSalle() {
+		return nmbSalle;
+	}
+
+	public void setNmbSalle(int nmbSalle) {
+		this.nmbSalle = nmbSalle;
+	}
+
+	public List<Salle> getSalles() {
+		return salles;
+	}
+
+	public void setSalles(List<Salle> salles) {
+		this.salles = salles;
+	}
+
+	public Ville getVille() {
+		return ville;
+	}
+
+	public void setVille(Ville ville) {
+		this.ville = ville;
+	}
+
+	public String getGit() {
+		return git;
+	}
+
+	public void setGit(String git) {
+		this.git = git;
+	}
+	
+	
+
 
 	
 	

@@ -39,31 +39,31 @@ public class CinemaRestController {
 	@Autowired
 	private VilleRepository villeRepository;
 	
-	@GetMapping(path = "/imageFilm/{idFilm}",produces = MediaType.IMAGE_JPEG_VALUE)
-	public byte[] imageFilm(@PathVariable Long idFilm) throws IOException {
-		Film film =  filmRepository.findById(idFilm).get();
-		String photoName = film.getPhoto();
-		File file = new File(System.getProperty("user.home")+"/cinema/"+photoName);
-		Path path = Paths.get(file.toURI());
-		//return Files.readAllBytes(Paths.get((System.getProperty("user.home")+"/ecom/product/"+p.getPhotoName())));
-		//byte[] f = Files.readAllBytes(path);
-		return Files.readAllBytes(path);
-	}
+//	@GetMapping(path = "/imageFilm/{idFilm}",produces = MediaType.IMAGE_JPEG_VALUE)
+//	public byte[] imageFilm(@PathVariable Long idFilm) throws IOException {
+//		Film film =  filmRepository.findById(idFilm).get();
+//		String photoName = film.getPhoto();
+//		File file = new File(System.getProperty("user.home")+"/cinema/"+photoName);
+//		Path path = Paths.get(file.toURI());
+//		//return Files.readAllBytes(Paths.get((System.getProperty("user.home")+"/ecom/product/"+p.getPhotoName())));
+//		//byte[] f = Files.readAllBytes(path);
+//		return Files.readAllBytes(path);
+//	}
 	
-	@PostMapping("/payerTickets")
-	public List<Ticket> payerTickets(@RequestBody TicketForm ticketForm)
-	{
-		List<Ticket> listTickets = new ArrayList<>();
-		ticketForm.getTickets().forEach(ticket->{
-			Ticket t =  ticketRepository.findById(ticket).get();
-			t.setNomClient(ticketForm.getNomClient());
-			t.setCodePayement(ticketForm.getCodePaiment());
-			t.setReserve(true);
-			ticketRepository.save(t);
-			listTickets.add(t);
-		});
-		return listTickets;
-	}
+//	@PostMapping("/payerTickets")
+//	public List<Ticket> payerTickets(@RequestBody TicketForm ticketForm)
+//	{
+//		List<Ticket> listTickets = new ArrayList<>();
+//		ticketForm.getTickets().forEach(ticket->{
+//			Ticket t =  ticketRepository.findById(ticket).get();
+//			t.setNomClient(ticketForm.getNomClient());
+//			t.setCodePayement(ticketForm.getCodePaiment());
+//			t.setReserve(true);
+//			ticketRepository.save(t);
+//			listTickets.add(t);
+//		});
+//		return listTickets;
+//	}
 	@CrossOrigin("*")
 	@GetMapping("/getAllVilles")
 	public List<Ville> getAllVille()
